@@ -5,7 +5,7 @@
 #include <ctype.h>
 #include <string.h>
 
-#include "sym2eps.h"
+#include "_sym2eps.h"
 
 #define LINESIZE (int)(1000.0/72.0)
 #define LINESIZEPT 1
@@ -121,7 +121,7 @@ read_symfile (FILE *f)
 {
   char *line;
   int msym = 0;
-  while (line = safe_fgets(f))
+  while ((line = safe_fgets(f)))
     {
       if (msym <= nsym)
 	{
@@ -159,7 +159,7 @@ ps_length(char *t, int size)
 }
 
 void
-scan_extents ()
+scan_extents (void)
 {
   int i, j;
   int x, y, w, h, x1, y1, x2, y2, n, s, r, v, avc, a, align;
@@ -282,11 +282,13 @@ scan_extents ()
 		  case 0: xo = 0; break;
 		  case 1: xo = len/2; break;
 		  case 2: xo = len; break;
+		  default: xo = 0;
 		  }
 		  switch (align % 3) {
 		  case 0: yo = 0; break;
 		  case 1: yo = (int)(s * 0.35); break;
 		  case 2: yo = (int)(s * 0.7); break;
+		  default: yo = 0;
 		  }
 
 		  switch (a) {
@@ -369,7 +371,7 @@ color_size (FILE *f, int c, int s)
   static int os = -100;
   if (oc != c)
     {
-      if (c < 0 || c >= NUM_COLORS)
+      if (c < 0 || (unsigned int)c >= NUM_COLORS)
 	c = NUM_COLORS-1;
       fprintf(f, "%s setrgbcolor\n", colormap[c]);
       oc = c;
@@ -399,7 +401,7 @@ write_eps (const char *filename, FILE *f)
   maxx += MARGIN;
   maxy += MARGIN;
 
-  fprintf(f, "%!PS-Adobe-3.0 EPSF-3.0\n");
+  fprintf(f, "%%!PS-Adobe-3.0 EPSF-3.0\n");
   fprintf(f, "%%%%BoundingBox: 0 0 %g %g\n",
 	  (maxx-minx)/1000.0 * 72 * scale, (maxy-miny)/1000.0 * 72 * scale);
   fprintf(f, "%%%%Pages: 1\n");
@@ -481,7 +483,7 @@ write_eps (const char *filename, FILE *f)
 		    y = x1;
 		    break;
 		  case 'v':
-		    fprintf (f, "0 %d rlineto\n", 0, y1);
+		    fprintf (f, "%d %d rlineto\n", 0, y1);
 		    y += x1;
 		    break;
 		  }
@@ -563,11 +565,13 @@ write_eps (const char *filename, FILE *f)
 		  case 0: xo = 0; break;
 		  case 1: xo = len/2; break;
 		  case 2: xo = len; break;
+		  default: xo = 0;
 		  }
 		  switch (align % 3) {
 		  case 0: yo = (int)(linestep * (n-1)); break;
 		  case 1: yo = (int)(linestep * ((n-1)/2.0-0.3)); break;
 		  case 2: yo = (int)(linestep * (-0.65)); break;
+		  default: yo = 0;
 		  }
 		  fprintf(f, "(");
 		  char *cp;
@@ -600,7 +604,7 @@ write_eps (const char *filename, FILE *f)
   fprintf(f, "%%%%EOF\n");
 }
 
-/* 2015 Chintalagiri Shashank
+/* 2015 Chintalagiri Shashank GPLv2
  * Refactored main out into the convert function, eliminating some
  * functionality in the process, but providing a function with a
  * straightforward prototype for wrapping.
@@ -633,6 +637,7 @@ int convert(char * inpath, char * outpath) {
   	write_eps(outpath, epsfile);
 
     fclose(epsfile);
+    return(0);
 }
 
 int
@@ -647,12 +652,16 @@ main(int argc, char **argv)
     }
   	else
     {
-      exit(2);
+      	exit(2);
     }
 
     if (argc > 2)
     {
       outpath = argv[2];
+	}
+	else
+	{
+		exit(2);
 	}
 
 	int rval = convert(inpath, outpath);

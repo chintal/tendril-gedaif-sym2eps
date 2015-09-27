@@ -5,11 +5,18 @@
 
 
 from distutils.core import setup
+from distutils.extension import Extension
 from Cython.Build import cythonize
 
+
 setup(
-    ext_modules=cythonize("sym2eps.pyx"),
-    install_requires=[
-        'cython'
+    ext_modules=cythonize(
+        [Extension(
+            'sym2eps', ["_sym2eps.c",
+                        "sym2eps.pyx"]
+        )]
+    ),
+    requires=[
+        'Cython'
     ]
 )

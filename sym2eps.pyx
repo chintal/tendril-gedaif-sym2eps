@@ -3,22 +3,22 @@
 # Copyright 2006 DJ Delorie             (Original C code)
 # Distributed under the terms of the GPLv2 License.
 
-"""
-
-Provides a _very_ simple wrapper around ``sym2eps``, written by DJ Delorie.
-
-This package (and the wrapper) are mostly for fun. There isn't much inherent
-utility to it. Normally, you would just use DJ Delorie's C file ``sym2eps.cc``
-directly, and get more than you would from here. This wrapper, for instance,
-doesn't support reading from and writing to stdin/stdout, which the C file
-does.
-
-The wrapper was written mostly to be able to remove the C code and the
-resulting requirement of figuring out a safe build process for it from
-the ``tendril`` core module. This way, we just list this package as a
-dependency and let setuptools take care of the rest.
-
-"""
+import os
+cimport _sym2eps
+ctypedef unsigned char char_type
 
 
-print "Hello World!"
+cdef _convert(char* inpath, char* outpath):
+    if _sym2eps.convert(inpath, outpath) != 0:
+        raise RuntimeError(
+            "Error converting {0} to {1}".format(inpath, outpath)
+        )
+
+
+cpdef convert(_py_inpath, _py_outpath):
+    _py_inpath = os.path.normpath(_py_inpath)
+    _py_outpath = os.path.normpath(_py_outpath)
+    cdef char* _c_inpath = _py_inpath
+    cdef char* _c_outpath = _py_outpath
+    _convert(_c_inpath, _c_outpath)
+
