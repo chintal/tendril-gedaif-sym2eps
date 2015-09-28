@@ -27,7 +27,7 @@ if not USE_CYTHON:
 else:
     ext = '.c'
 
-extensions = [Extension('sym2eps', ["_sym2eps.c", "sym2eps" + ext])]
+extensions = [Extension('sym2eps', ["src/_sym2eps.c", "sym2eps" + ext])]
 
 if USE_CYTHON:
     extensions = cythonize(extensions)
