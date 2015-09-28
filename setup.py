@@ -3,6 +3,7 @@
 # Copyright 2006 DJ Delorie             (Original C code)
 # Distributed under the terms of the GPLv2 License.
 
+from __future__ import print_function
 
 import os
 from distutils.core import setup
@@ -11,8 +12,10 @@ from distutils.extension import Extension
 try:
     from Cython.Build import cythonize
     USE_CYTHON = True
+    print("Using Cython")
 except ImportError:
     USE_CYTHON = False
+    print("Using bundled sym2eps.c")
 
 
 # Utility function to read the README file.
@@ -25,7 +28,7 @@ def read(fname):
 if not USE_CYTHON:
     ext = '.c'
 else:
-    ext = '.c'
+    ext = '.pyx'
 
 extensions = [Extension('sym2eps', ["src/_sym2eps.c", "sym2eps" + ext])]
 
@@ -54,7 +57,7 @@ setup(
     ],
     platforms='any',
     ext_modules=extensions,
-    tests_require=[
+    requires=[
         'Cython',
         'pytest',
     ]

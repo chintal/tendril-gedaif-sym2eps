@@ -4,7 +4,7 @@
 {
     "distutils": {
         "depends": [
-            "_sym2eps.h"
+            "src/_sym2eps.h"
         ]
     }
 }
@@ -246,7 +246,7 @@ static CYTHON_INLINE float __PYX_NAN() {
 
 #define __PYX_HAVE__sym2eps
 #define __PYX_HAVE_API__sym2eps
-#include "_sym2eps.h"
+#include "src/_sym2eps.h"
 #ifdef _OPENMP
 #include <omp.h>
 #endif /* _OPENMP */
@@ -560,14 +560,6 @@ static CYTHON_INLINE void __Pyx_ErrFetch(PyObject **type, PyObject **value, PyOb
 
 static void __Pyx_Raise(PyObject *type, PyObject *value, PyObject *tb, PyObject *cause);
 
-static CYTHON_INLINE PyObject *__Pyx_GetModuleGlobalName(PyObject *name);
-
-#if CYTHON_COMPILING_IN_CPYTHON
-static CYTHON_INLINE PyObject* __Pyx_PyObject_CallMethO(PyObject *func, PyObject *arg);
-#endif
-
-static CYTHON_INLINE PyObject* __Pyx_PyObject_CallOneArg(PyObject *func, PyObject *arg);
-
 static void __Pyx_RaiseArgtupleInvalid(const char* func_name, int exact,
     Py_ssize_t num_min, Py_ssize_t num_max, Py_ssize_t num_found);
 
@@ -576,6 +568,14 @@ static void __Pyx_RaiseDoubleKeywordsError(const char* func_name, PyObject* kw_n
 static int __Pyx_ParseOptionalKeywords(PyObject *kwds, PyObject **argnames[],\
     PyObject *kwds2, PyObject *values[], Py_ssize_t num_pos_args,\
     const char* function_name);
+
+static CYTHON_INLINE PyObject *__Pyx_GetModuleGlobalName(PyObject *name);
+
+#if CYTHON_COMPILING_IN_CPYTHON
+static CYTHON_INLINE PyObject* __Pyx_PyObject_CallMethO(PyObject *func, PyObject *arg);
+#endif
+
+static CYTHON_INLINE PyObject* __Pyx_PyObject_CallOneArg(PyObject *func, PyObject *arg);
 
 static PyObject *__Pyx_Import(PyObject *name, PyObject *from_list, int level);
 
@@ -610,46 +610,77 @@ static int __Pyx_InitStrings(__Pyx_StringTabEntry *t);
 /* Module declarations from '_sym2eps' */
 
 /* Module declarations from 'sym2eps' */
-static PyObject *__pyx_f_7sym2eps__convert(char *, char *); /*proto*/
-static PyObject *__pyx_f_7sym2eps_convert(PyObject *, PyObject *, int __pyx_skip_dispatch); /*proto*/
+static PyObject *__pyx_f_7sym2eps___convert(char *, char *); /*proto*/
+static PyObject *__pyx_f_7sym2eps__convert(PyObject *, PyObject *, int __pyx_skip_dispatch); /*proto*/
 #define __Pyx_MODULE_NAME "sym2eps"
 int __pyx_module_is_main_sym2eps = 0;
 
 /* Implementation of 'sym2eps' */
 static PyObject *__pyx_builtin_RuntimeError;
+static char __pyx_k_s[] = "s";
 static char __pyx_k_os[] = "os";
 static char __pyx_k_main[] = "__main__";
 static char __pyx_k_path[] = "path";
 static char __pyx_k_test[] = "__test__";
+static char __pyx_k_UTF_8[] = "UTF-8";
+static char __pyx_k_bytes[] = "bytes";
+static char __pyx_k_encode[] = "encode";
 static char __pyx_k_format[] = "format";
 static char __pyx_k_import[] = "__import__";
+static char __pyx_k_inpath[] = "inpath";
+static char __pyx_k_convert[] = "convert";
+static char __pyx_k_outpath[] = "outpath";
+static char __pyx_k_sym2eps[] = "sym2eps";
 static char __pyx_k_normpath[] = "normpath";
+static char __pyx_k_get_bytes[] = "get_bytes";
 static char __pyx_k_py_inpath[] = "_py_inpath";
 static char __pyx_k_py_outpath[] = "_py_outpath";
 static char __pyx_k_RuntimeError[] = "RuntimeError";
+static char __pyx_k_py_bytes_inpath[] = "_py_bytes_inpath";
+static char __pyx_k_py_bytes_outpath[] = "_py_bytes_outpath";
 static char __pyx_k_Error_converting_0_to_1[] = "Error converting {0} to {1}";
+static char __pyx_k_media_ldata_code_workspaces_cyt[] = "/media/ldata/code/workspaces/cython/sym2eps/sym2eps.pyx";
 static PyObject *__pyx_kp_s_Error_converting_0_to_1;
 static PyObject *__pyx_n_s_RuntimeError;
+static PyObject *__pyx_kp_s_UTF_8;
+static PyObject *__pyx_n_s_bytes;
+static PyObject *__pyx_n_s_convert;
+static PyObject *__pyx_n_s_encode;
 static PyObject *__pyx_n_s_format;
+static PyObject *__pyx_n_s_get_bytes;
 static PyObject *__pyx_n_s_import;
+static PyObject *__pyx_n_s_inpath;
 static PyObject *__pyx_n_s_main;
+static PyObject *__pyx_kp_s_media_ldata_code_workspaces_cyt;
 static PyObject *__pyx_n_s_normpath;
 static PyObject *__pyx_n_s_os;
+static PyObject *__pyx_n_s_outpath;
 static PyObject *__pyx_n_s_path;
+static PyObject *__pyx_n_s_py_bytes_inpath;
+static PyObject *__pyx_n_s_py_bytes_outpath;
 static PyObject *__pyx_n_s_py_inpath;
 static PyObject *__pyx_n_s_py_outpath;
+static PyObject *__pyx_n_s_s;
+static PyObject *__pyx_n_s_sym2eps;
 static PyObject *__pyx_n_s_test;
-static PyObject *__pyx_pf_7sym2eps_convert(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v__py_inpath, PyObject *__pyx_v__py_outpath); /* proto */
+static PyObject *__pyx_pf_7sym2eps__convert(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v__py_bytes_inpath, PyObject *__pyx_v__py_bytes_outpath); /* proto */
+static PyObject *__pyx_pf_7sym2eps_2get_bytes(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_s); /* proto */
+static PyObject *__pyx_pf_7sym2eps_4convert(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_inpath, PyObject *__pyx_v_outpath); /* proto */
+static PyObject *__pyx_tuple_;
+static PyObject *__pyx_tuple__2;
+static PyObject *__pyx_tuple__4;
+static PyObject *__pyx_codeobj__3;
+static PyObject *__pyx_codeobj__5;
 
 /* "sym2eps.pyx":11
  * 
  * 
- * cdef _convert(char* inpath, char* outpath):             # <<<<<<<<<<<<<<
+ * cdef __convert(char* inpath, char* outpath):             # <<<<<<<<<<<<<<
  *     if _sym2eps.convert(inpath, outpath) != 0:
  *         raise RuntimeError(
  */
 
-static PyObject *__pyx_f_7sym2eps__convert(char *__pyx_v_inpath, char *__pyx_v_outpath) {
+static PyObject *__pyx_f_7sym2eps___convert(char *__pyx_v_inpath, char *__pyx_v_outpath) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   int __pyx_t_1;
@@ -663,11 +694,11 @@ static PyObject *__pyx_f_7sym2eps__convert(char *__pyx_v_inpath, char *__pyx_v_o
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("_convert", 0);
+  __Pyx_RefNannySetupContext("__convert", 0);
 
   /* "sym2eps.pyx":12
  * 
- * cdef _convert(char* inpath, char* outpath):
+ * cdef __convert(char* inpath, char* outpath):
  *     if _sym2eps.convert(inpath, outpath) != 0:             # <<<<<<<<<<<<<<
  *         raise RuntimeError(
  *             "Error converting {0} to {1}".format(inpath, outpath)
@@ -717,7 +748,7 @@ static PyObject *__pyx_f_7sym2eps__convert(char *__pyx_v_inpath, char *__pyx_v_o
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
     /* "sym2eps.pyx":13
- * cdef _convert(char* inpath, char* outpath):
+ * cdef __convert(char* inpath, char* outpath):
  *     if _sym2eps.convert(inpath, outpath) != 0:
  *         raise RuntimeError(             # <<<<<<<<<<<<<<
  *             "Error converting {0} to {1}".format(inpath, outpath)
@@ -737,7 +768,7 @@ static PyObject *__pyx_f_7sym2eps__convert(char *__pyx_v_inpath, char *__pyx_v_o
 
     /* "sym2eps.pyx":12
  * 
- * cdef _convert(char* inpath, char* outpath):
+ * cdef __convert(char* inpath, char* outpath):
  *     if _sym2eps.convert(inpath, outpath) != 0:             # <<<<<<<<<<<<<<
  *         raise RuntimeError(
  *             "Error converting {0} to {1}".format(inpath, outpath)
@@ -747,7 +778,7 @@ static PyObject *__pyx_f_7sym2eps__convert(char *__pyx_v_inpath, char *__pyx_v_o
   /* "sym2eps.pyx":11
  * 
  * 
- * cdef _convert(char* inpath, char* outpath):             # <<<<<<<<<<<<<<
+ * cdef __convert(char* inpath, char* outpath):             # <<<<<<<<<<<<<<
  *     if _sym2eps.convert(inpath, outpath) != 0:
  *         raise RuntimeError(
  */
@@ -762,7 +793,7 @@ static PyObject *__pyx_f_7sym2eps__convert(char *__pyx_v_inpath, char *__pyx_v_o
   __Pyx_XDECREF(__pyx_t_5);
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_8);
-  __Pyx_AddTraceback("sym2eps._convert", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("sym2eps.__convert", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -773,184 +804,89 @@ static PyObject *__pyx_f_7sym2eps__convert(char *__pyx_v_inpath, char *__pyx_v_o
 /* "sym2eps.pyx":18
  * 
  * 
- * cpdef convert(_py_inpath, _py_outpath):             # <<<<<<<<<<<<<<
- *     _py_inpath = os.path.normpath(_py_inpath)
- *     _py_outpath = os.path.normpath(_py_outpath)
+ * cpdef _convert(_py_bytes_inpath, _py_bytes_outpath):             # <<<<<<<<<<<<<<
+ *     cdef char* _c_inpath = _py_bytes_inpath
+ *     cdef char* _c_outpath = _py_bytes_outpath
  */
 
-static PyObject *__pyx_pw_7sym2eps_1convert(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_f_7sym2eps_convert(PyObject *__pyx_v__py_inpath, PyObject *__pyx_v__py_outpath, CYTHON_UNUSED int __pyx_skip_dispatch) {
+static PyObject *__pyx_pw_7sym2eps_1_convert(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_f_7sym2eps__convert(PyObject *__pyx_v__py_bytes_inpath, PyObject *__pyx_v__py_bytes_outpath, CYTHON_UNUSED int __pyx_skip_dispatch) {
   char *__pyx_v__c_inpath;
   char *__pyx_v__c_outpath;
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
-  PyObject *__pyx_t_1 = NULL;
+  char *__pyx_t_1;
   PyObject *__pyx_t_2 = NULL;
-  PyObject *__pyx_t_3 = NULL;
-  PyObject *__pyx_t_4 = NULL;
-  char *__pyx_t_5;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("convert", 0);
-  __Pyx_INCREF(__pyx_v__py_inpath);
-  __Pyx_INCREF(__pyx_v__py_outpath);
+  __Pyx_RefNannySetupContext("_convert", 0);
 
   /* "sym2eps.pyx":19
  * 
- * cpdef convert(_py_inpath, _py_outpath):
- *     _py_inpath = os.path.normpath(_py_inpath)             # <<<<<<<<<<<<<<
- *     _py_outpath = os.path.normpath(_py_outpath)
- *     cdef char* _c_inpath = _py_inpath
+ * cpdef _convert(_py_bytes_inpath, _py_bytes_outpath):
+ *     cdef char* _c_inpath = _py_bytes_inpath             # <<<<<<<<<<<<<<
+ *     cdef char* _c_outpath = _py_bytes_outpath
+ *     __convert(_c_inpath, _c_outpath)
  */
-  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_os); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 19; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_path); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 19; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_normpath); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 19; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = NULL;
-  if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
-    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_2);
-    if (likely(__pyx_t_3)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-      __Pyx_INCREF(__pyx_t_3);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_2, function);
-    }
-  }
-  if (!__pyx_t_3) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v__py_inpath); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 19; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_1);
-  } else {
-    __pyx_t_4 = PyTuple_New(1+1); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 19; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_4);
-    __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_3); __pyx_t_3 = NULL;
-    __Pyx_INCREF(__pyx_v__py_inpath);
-    __Pyx_GIVEREF(__pyx_v__py_inpath);
-    PyTuple_SET_ITEM(__pyx_t_4, 0+1, __pyx_v__py_inpath);
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_4, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 19; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  }
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __Pyx_DECREF_SET(__pyx_v__py_inpath, __pyx_t_1);
-  __pyx_t_1 = 0;
+  __pyx_t_1 = __Pyx_PyObject_AsString(__pyx_v__py_bytes_inpath); if (unlikely((!__pyx_t_1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 19; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_v__c_inpath = __pyx_t_1;
 
   /* "sym2eps.pyx":20
- * cpdef convert(_py_inpath, _py_outpath):
- *     _py_inpath = os.path.normpath(_py_inpath)
- *     _py_outpath = os.path.normpath(_py_outpath)             # <<<<<<<<<<<<<<
- *     cdef char* _c_inpath = _py_inpath
- *     cdef char* _c_outpath = _py_outpath
+ * cpdef _convert(_py_bytes_inpath, _py_bytes_outpath):
+ *     cdef char* _c_inpath = _py_bytes_inpath
+ *     cdef char* _c_outpath = _py_bytes_outpath             # <<<<<<<<<<<<<<
+ *     __convert(_c_inpath, _c_outpath)
+ * 
  */
-  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_os); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 20; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_path); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 20; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_4);
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_normpath); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 20; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = NULL;
-  if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_2))) {
-    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_2);
-    if (likely(__pyx_t_4)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
-      __Pyx_INCREF(__pyx_t_4);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_2, function);
-    }
-  }
-  if (!__pyx_t_4) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v__py_outpath); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 20; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_1);
-  } else {
-    __pyx_t_3 = PyTuple_New(1+1); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 20; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_GIVEREF(__pyx_t_4); PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_4); __pyx_t_4 = NULL;
-    __Pyx_INCREF(__pyx_v__py_outpath);
-    __Pyx_GIVEREF(__pyx_v__py_outpath);
-    PyTuple_SET_ITEM(__pyx_t_3, 0+1, __pyx_v__py_outpath);
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 20; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_1);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  }
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __Pyx_DECREF_SET(__pyx_v__py_outpath, __pyx_t_1);
-  __pyx_t_1 = 0;
+  __pyx_t_1 = __Pyx_PyObject_AsString(__pyx_v__py_bytes_outpath); if (unlikely((!__pyx_t_1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 20; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_v__c_outpath = __pyx_t_1;
 
   /* "sym2eps.pyx":21
- *     _py_inpath = os.path.normpath(_py_inpath)
- *     _py_outpath = os.path.normpath(_py_outpath)
- *     cdef char* _c_inpath = _py_inpath             # <<<<<<<<<<<<<<
- *     cdef char* _c_outpath = _py_outpath
- *     _convert(_c_inpath, _c_outpath)
- */
-  __pyx_t_5 = __Pyx_PyObject_AsString(__pyx_v__py_inpath); if (unlikely((!__pyx_t_5) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 21; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_v__c_inpath = __pyx_t_5;
-
-  /* "sym2eps.pyx":22
- *     _py_outpath = os.path.normpath(_py_outpath)
- *     cdef char* _c_inpath = _py_inpath
- *     cdef char* _c_outpath = _py_outpath             # <<<<<<<<<<<<<<
- *     _convert(_c_inpath, _c_outpath)
+ *     cdef char* _c_inpath = _py_bytes_inpath
+ *     cdef char* _c_outpath = _py_bytes_outpath
+ *     __convert(_c_inpath, _c_outpath)             # <<<<<<<<<<<<<<
+ * 
  * 
  */
-  __pyx_t_5 = __Pyx_PyObject_AsString(__pyx_v__py_outpath); if (unlikely((!__pyx_t_5) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 22; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __pyx_v__c_outpath = __pyx_t_5;
-
-  /* "sym2eps.pyx":23
- *     cdef char* _c_inpath = _py_inpath
- *     cdef char* _c_outpath = _py_outpath
- *     _convert(_c_inpath, _c_outpath)             # <<<<<<<<<<<<<<
- * 
- */
-  __pyx_t_1 = __pyx_f_7sym2eps__convert(__pyx_v__c_inpath, __pyx_v__c_outpath); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 23; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_2 = __pyx_f_7sym2eps___convert(__pyx_v__c_inpath, __pyx_v__c_outpath); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 21; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "sym2eps.pyx":18
  * 
  * 
- * cpdef convert(_py_inpath, _py_outpath):             # <<<<<<<<<<<<<<
- *     _py_inpath = os.path.normpath(_py_inpath)
- *     _py_outpath = os.path.normpath(_py_outpath)
+ * cpdef _convert(_py_bytes_inpath, _py_bytes_outpath):             # <<<<<<<<<<<<<<
+ *     cdef char* _c_inpath = _py_bytes_inpath
+ *     cdef char* _c_outpath = _py_bytes_outpath
  */
 
   /* function exit code */
   __pyx_r = Py_None; __Pyx_INCREF(Py_None);
   goto __pyx_L0;
   __pyx_L1_error:;
-  __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
-  __Pyx_XDECREF(__pyx_t_3);
-  __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_AddTraceback("sym2eps.convert", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("sym2eps._convert", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
-  __Pyx_XDECREF(__pyx_v__py_inpath);
-  __Pyx_XDECREF(__pyx_v__py_outpath);
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
 /* Python wrapper */
-static PyObject *__pyx_pw_7sym2eps_1convert(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_7sym2eps_1convert(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
-  PyObject *__pyx_v__py_inpath = 0;
-  PyObject *__pyx_v__py_outpath = 0;
+static PyObject *__pyx_pw_7sym2eps_1_convert(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_7sym2eps_1_convert(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v__py_bytes_inpath = 0;
+  PyObject *__pyx_v__py_bytes_outpath = 0;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("convert (wrapper)", 0);
+  __Pyx_RefNannySetupContext("_convert (wrapper)", 0);
   {
-    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_py_inpath,&__pyx_n_s_py_outpath,0};
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_py_bytes_inpath,&__pyx_n_s_py_bytes_outpath,0};
     PyObject* values[2] = {0,0};
     if (unlikely(__pyx_kwds)) {
       Py_ssize_t kw_args;
@@ -964,16 +900,16 @@ static PyObject *__pyx_pw_7sym2eps_1convert(PyObject *__pyx_self, PyObject *__py
       kw_args = PyDict_Size(__pyx_kwds);
       switch (pos_args) {
         case  0:
-        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_py_inpath)) != 0)) kw_args--;
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_py_bytes_inpath)) != 0)) kw_args--;
         else goto __pyx_L5_argtuple_error;
         case  1:
-        if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_py_outpath)) != 0)) kw_args--;
+        if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_py_bytes_outpath)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("convert", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 18; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+          __Pyx_RaiseArgtupleInvalid("_convert", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 18; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "convert") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 18; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "_convert") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 18; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -981,34 +917,34 @@ static PyObject *__pyx_pw_7sym2eps_1convert(PyObject *__pyx_self, PyObject *__py
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v__py_inpath = values[0];
-    __pyx_v__py_outpath = values[1];
+    __pyx_v__py_bytes_inpath = values[0];
+    __pyx_v__py_bytes_outpath = values[1];
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("convert", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 18; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+  __Pyx_RaiseArgtupleInvalid("_convert", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 18; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
-  __Pyx_AddTraceback("sym2eps.convert", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("sym2eps._convert", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_7sym2eps_convert(__pyx_self, __pyx_v__py_inpath, __pyx_v__py_outpath);
+  __pyx_r = __pyx_pf_7sym2eps__convert(__pyx_self, __pyx_v__py_bytes_inpath, __pyx_v__py_bytes_outpath);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_7sym2eps_convert(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v__py_inpath, PyObject *__pyx_v__py_outpath) {
+static PyObject *__pyx_pf_7sym2eps__convert(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v__py_bytes_inpath, PyObject *__pyx_v__py_bytes_outpath) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("convert", 0);
+  __Pyx_RefNannySetupContext("_convert", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_7sym2eps_convert(__pyx_v__py_inpath, __pyx_v__py_outpath, 0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 18; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __pyx_f_7sym2eps__convert(__pyx_v__py_bytes_inpath, __pyx_v__py_bytes_outpath, 0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 18; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -1017,7 +953,7 @@ static PyObject *__pyx_pf_7sym2eps_convert(CYTHON_UNUSED PyObject *__pyx_self, P
   /* function exit code */
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
-  __Pyx_AddTraceback("sym2eps.convert", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("sym2eps._convert", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -1025,8 +961,389 @@ static PyObject *__pyx_pf_7sym2eps_convert(CYTHON_UNUSED PyObject *__pyx_self, P
   return __pyx_r;
 }
 
+/* "sym2eps.pyx":24
+ * 
+ * 
+ * def get_bytes(s):             # <<<<<<<<<<<<<<
+ *     if isinstance(s, unicode):
+ *         bytes = s.encode('UTF-8')
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7sym2eps_3get_bytes(PyObject *__pyx_self, PyObject *__pyx_v_s); /*proto*/
+static PyMethodDef __pyx_mdef_7sym2eps_3get_bytes = {"get_bytes", (PyCFunction)__pyx_pw_7sym2eps_3get_bytes, METH_O, 0};
+static PyObject *__pyx_pw_7sym2eps_3get_bytes(PyObject *__pyx_self, PyObject *__pyx_v_s) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("get_bytes (wrapper)", 0);
+  __pyx_r = __pyx_pf_7sym2eps_2get_bytes(__pyx_self, ((PyObject *)__pyx_v_s));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7sym2eps_2get_bytes(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_s) {
+  PyObject *__pyx_v_bytes = NULL;
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  int __pyx_t_1;
+  int __pyx_t_2;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("get_bytes", 0);
+
+  /* "sym2eps.pyx":25
+ * 
+ * def get_bytes(s):
+ *     if isinstance(s, unicode):             # <<<<<<<<<<<<<<
+ *         bytes = s.encode('UTF-8')
+ *         return bytes
+ */
+  __pyx_t_1 = PyUnicode_Check(__pyx_v_s); 
+  __pyx_t_2 = (__pyx_t_1 != 0);
+  if (__pyx_t_2) {
+
+    /* "sym2eps.pyx":26
+ * def get_bytes(s):
+ *     if isinstance(s, unicode):
+ *         bytes = s.encode('UTF-8')             # <<<<<<<<<<<<<<
+ *         return bytes
+ *     return s
+ */
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_s, __pyx_n_s_encode); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 26; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_3);
+    __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_tuple_, NULL); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 26; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __pyx_v_bytes = __pyx_t_4;
+    __pyx_t_4 = 0;
+
+    /* "sym2eps.pyx":27
+ *     if isinstance(s, unicode):
+ *         bytes = s.encode('UTF-8')
+ *         return bytes             # <<<<<<<<<<<<<<
+ *     return s
+ * 
+ */
+    __Pyx_XDECREF(__pyx_r);
+    __Pyx_INCREF(__pyx_v_bytes);
+    __pyx_r = __pyx_v_bytes;
+    goto __pyx_L0;
+
+    /* "sym2eps.pyx":25
+ * 
+ * def get_bytes(s):
+ *     if isinstance(s, unicode):             # <<<<<<<<<<<<<<
+ *         bytes = s.encode('UTF-8')
+ *         return bytes
+ */
+  }
+
+  /* "sym2eps.pyx":28
+ *         bytes = s.encode('UTF-8')
+ *         return bytes
+ *     return s             # <<<<<<<<<<<<<<
+ * 
+ * 
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __Pyx_INCREF(__pyx_v_s);
+  __pyx_r = __pyx_v_s;
+  goto __pyx_L0;
+
+  /* "sym2eps.pyx":24
+ * 
+ * 
+ * def get_bytes(s):             # <<<<<<<<<<<<<<
+ *     if isinstance(s, unicode):
+ *         bytes = s.encode('UTF-8')
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_AddTraceback("sym2eps.get_bytes", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XDECREF(__pyx_v_bytes);
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "sym2eps.pyx":31
+ * 
+ * 
+ * def convert(inpath, outpath):             # <<<<<<<<<<<<<<
+ *     _py_inpath = get_bytes(os.path.normpath(inpath))
+ *     _py_outpath = get_bytes(os.path.normpath(outpath))
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_7sym2eps_5convert(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_7sym2eps_5convert = {"convert", (PyCFunction)__pyx_pw_7sym2eps_5convert, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_7sym2eps_5convert(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_inpath = 0;
+  PyObject *__pyx_v_outpath = 0;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("convert (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_inpath,&__pyx_n_s_outpath,0};
+    PyObject* values[2] = {0,0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_inpath)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+        case  1:
+        if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_outpath)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("convert", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 31; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "convert") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 31; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+      values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+    }
+    __pyx_v_inpath = values[0];
+    __pyx_v_outpath = values[1];
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("convert", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 31; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("sym2eps.convert", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_7sym2eps_4convert(__pyx_self, __pyx_v_inpath, __pyx_v_outpath);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_7sym2eps_4convert(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_inpath, PyObject *__pyx_v_outpath) {
+  PyObject *__pyx_v__py_inpath = NULL;
+  PyObject *__pyx_v__py_outpath = NULL;
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("convert", 0);
+
+  /* "sym2eps.pyx":32
+ * 
+ * def convert(inpath, outpath):
+ *     _py_inpath = get_bytes(os.path.normpath(inpath))             # <<<<<<<<<<<<<<
+ *     _py_outpath = get_bytes(os.path.normpath(outpath))
+ *     _convert(_py_inpath, _py_outpath)
+ */
+  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_get_bytes); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 32; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_os); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 32; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_path); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 32; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_5);
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_normpath); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 32; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  __pyx_t_5 = NULL;
+  if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_4))) {
+    __pyx_t_5 = PyMethod_GET_SELF(__pyx_t_4);
+    if (likely(__pyx_t_5)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
+      __Pyx_INCREF(__pyx_t_5);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_4, function);
+    }
+  }
+  if (!__pyx_t_5) {
+    __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_v_inpath); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 32; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_3);
+  } else {
+    __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 32; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_6);
+    __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
+    __Pyx_INCREF(__pyx_v_inpath);
+    __Pyx_GIVEREF(__pyx_v_inpath);
+    PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_v_inpath);
+    __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_6, NULL); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 32; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+  }
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_t_4 = NULL;
+  if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_2))) {
+    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_2);
+    if (likely(__pyx_t_4)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+      __Pyx_INCREF(__pyx_t_4);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_2, function);
+    }
+  }
+  if (!__pyx_t_4) {
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 32; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_GOTREF(__pyx_t_1);
+  } else {
+    __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 32; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_6);
+    __Pyx_GIVEREF(__pyx_t_4); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_4); __pyx_t_4 = NULL;
+    __Pyx_GIVEREF(__pyx_t_3);
+    PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
+    __pyx_t_3 = 0;
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_6, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 32; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+  }
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_v__py_inpath = __pyx_t_1;
+  __pyx_t_1 = 0;
+
+  /* "sym2eps.pyx":33
+ * def convert(inpath, outpath):
+ *     _py_inpath = get_bytes(os.path.normpath(inpath))
+ *     _py_outpath = get_bytes(os.path.normpath(outpath))             # <<<<<<<<<<<<<<
+ *     _convert(_py_inpath, _py_outpath)
+ * 
+ */
+  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_get_bytes); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 33; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = __Pyx_GetModuleGlobalName(__pyx_n_s_os); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 33; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_path); if (unlikely(!__pyx_t_4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 33; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_normpath); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 33; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_t_4 = NULL;
+  if (CYTHON_COMPILING_IN_CPYTHON && likely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_4)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_4);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
+    }
+  }
+  if (!__pyx_t_4) {
+    __pyx_t_6 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_outpath); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 33; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_6);
+  } else {
+    __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 33; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_5);
+    __Pyx_GIVEREF(__pyx_t_4); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_4); __pyx_t_4 = NULL;
+    __Pyx_INCREF(__pyx_v_outpath);
+    __Pyx_GIVEREF(__pyx_v_outpath);
+    PyTuple_SET_ITEM(__pyx_t_5, 0+1, __pyx_v_outpath);
+    __pyx_t_6 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 33; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_6);
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  }
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = NULL;
+  if (CYTHON_COMPILING_IN_CPYTHON && unlikely(PyMethod_Check(__pyx_t_2))) {
+    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_2);
+    if (likely(__pyx_t_3)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+      __Pyx_INCREF(__pyx_t_3);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_2, function);
+    }
+  }
+  if (!__pyx_t_3) {
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_6); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 33; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+    __Pyx_GOTREF(__pyx_t_1);
+  } else {
+    __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 33; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_5);
+    __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_3); __pyx_t_3 = NULL;
+    __Pyx_GIVEREF(__pyx_t_6);
+    PyTuple_SET_ITEM(__pyx_t_5, 0+1, __pyx_t_6);
+    __pyx_t_6 = 0;
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 33; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  }
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_v__py_outpath = __pyx_t_1;
+  __pyx_t_1 = 0;
+
+  /* "sym2eps.pyx":34
+ *     _py_inpath = get_bytes(os.path.normpath(inpath))
+ *     _py_outpath = get_bytes(os.path.normpath(outpath))
+ *     _convert(_py_inpath, _py_outpath)             # <<<<<<<<<<<<<<
+ * 
+ */
+  __pyx_t_1 = __pyx_f_7sym2eps__convert(__pyx_v__py_inpath, __pyx_v__py_outpath, 0); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 34; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "sym2eps.pyx":31
+ * 
+ * 
+ * def convert(inpath, outpath):             # <<<<<<<<<<<<<<
+ *     _py_inpath = get_bytes(os.path.normpath(inpath))
+ *     _py_outpath = get_bytes(os.path.normpath(outpath))
+ */
+
+  /* function exit code */
+  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_AddTraceback("sym2eps.convert", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XDECREF(__pyx_v__py_inpath);
+  __Pyx_XDECREF(__pyx_v__py_outpath);
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
 static PyMethodDef __pyx_methods[] = {
-  {"convert", (PyCFunction)__pyx_pw_7sym2eps_1convert, METH_VARARGS|METH_KEYWORDS, 0},
+  {"_convert", (PyCFunction)__pyx_pw_7sym2eps_1_convert, METH_VARARGS|METH_KEYWORDS, 0},
   {0, 0, 0, 0}
 };
 
@@ -1051,14 +1368,26 @@ static struct PyModuleDef __pyx_moduledef = {
 static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_s_Error_converting_0_to_1, __pyx_k_Error_converting_0_to_1, sizeof(__pyx_k_Error_converting_0_to_1), 0, 0, 1, 0},
   {&__pyx_n_s_RuntimeError, __pyx_k_RuntimeError, sizeof(__pyx_k_RuntimeError), 0, 0, 1, 1},
+  {&__pyx_kp_s_UTF_8, __pyx_k_UTF_8, sizeof(__pyx_k_UTF_8), 0, 0, 1, 0},
+  {&__pyx_n_s_bytes, __pyx_k_bytes, sizeof(__pyx_k_bytes), 0, 0, 1, 1},
+  {&__pyx_n_s_convert, __pyx_k_convert, sizeof(__pyx_k_convert), 0, 0, 1, 1},
+  {&__pyx_n_s_encode, __pyx_k_encode, sizeof(__pyx_k_encode), 0, 0, 1, 1},
   {&__pyx_n_s_format, __pyx_k_format, sizeof(__pyx_k_format), 0, 0, 1, 1},
+  {&__pyx_n_s_get_bytes, __pyx_k_get_bytes, sizeof(__pyx_k_get_bytes), 0, 0, 1, 1},
   {&__pyx_n_s_import, __pyx_k_import, sizeof(__pyx_k_import), 0, 0, 1, 1},
+  {&__pyx_n_s_inpath, __pyx_k_inpath, sizeof(__pyx_k_inpath), 0, 0, 1, 1},
   {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
+  {&__pyx_kp_s_media_ldata_code_workspaces_cyt, __pyx_k_media_ldata_code_workspaces_cyt, sizeof(__pyx_k_media_ldata_code_workspaces_cyt), 0, 0, 1, 0},
   {&__pyx_n_s_normpath, __pyx_k_normpath, sizeof(__pyx_k_normpath), 0, 0, 1, 1},
   {&__pyx_n_s_os, __pyx_k_os, sizeof(__pyx_k_os), 0, 0, 1, 1},
+  {&__pyx_n_s_outpath, __pyx_k_outpath, sizeof(__pyx_k_outpath), 0, 0, 1, 1},
   {&__pyx_n_s_path, __pyx_k_path, sizeof(__pyx_k_path), 0, 0, 1, 1},
+  {&__pyx_n_s_py_bytes_inpath, __pyx_k_py_bytes_inpath, sizeof(__pyx_k_py_bytes_inpath), 0, 0, 1, 1},
+  {&__pyx_n_s_py_bytes_outpath, __pyx_k_py_bytes_outpath, sizeof(__pyx_k_py_bytes_outpath), 0, 0, 1, 1},
   {&__pyx_n_s_py_inpath, __pyx_k_py_inpath, sizeof(__pyx_k_py_inpath), 0, 0, 1, 1},
   {&__pyx_n_s_py_outpath, __pyx_k_py_outpath, sizeof(__pyx_k_py_outpath), 0, 0, 1, 1},
+  {&__pyx_n_s_s, __pyx_k_s, sizeof(__pyx_k_s), 0, 0, 1, 1},
+  {&__pyx_n_s_sym2eps, __pyx_k_sym2eps, sizeof(__pyx_k_sym2eps), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
   {0, 0, 0, 0, 0, 0, 0}
 };
@@ -1072,8 +1401,46 @@ static int __Pyx_InitCachedBuiltins(void) {
 static int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
+
+  /* "sym2eps.pyx":26
+ * def get_bytes(s):
+ *     if isinstance(s, unicode):
+ *         bytes = s.encode('UTF-8')             # <<<<<<<<<<<<<<
+ *         return bytes
+ *     return s
+ */
+  __pyx_tuple_ = PyTuple_Pack(1, __pyx_kp_s_UTF_8); if (unlikely(!__pyx_tuple_)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 26; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple_);
+  __Pyx_GIVEREF(__pyx_tuple_);
+
+  /* "sym2eps.pyx":24
+ * 
+ * 
+ * def get_bytes(s):             # <<<<<<<<<<<<<<
+ *     if isinstance(s, unicode):
+ *         bytes = s.encode('UTF-8')
+ */
+  __pyx_tuple__2 = PyTuple_Pack(2, __pyx_n_s_s, __pyx_n_s_bytes); if (unlikely(!__pyx_tuple__2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 24; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__2);
+  __Pyx_GIVEREF(__pyx_tuple__2);
+  __pyx_codeobj__3 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__2, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_media_ldata_code_workspaces_cyt, __pyx_n_s_get_bytes, 24, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 24; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+
+  /* "sym2eps.pyx":31
+ * 
+ * 
+ * def convert(inpath, outpath):             # <<<<<<<<<<<<<<
+ *     _py_inpath = get_bytes(os.path.normpath(inpath))
+ *     _py_outpath = get_bytes(os.path.normpath(outpath))
+ */
+  __pyx_tuple__4 = PyTuple_Pack(4, __pyx_n_s_inpath, __pyx_n_s_outpath, __pyx_n_s_py_inpath, __pyx_n_s_py_outpath); if (unlikely(!__pyx_tuple__4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 31; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_tuple__4);
+  __Pyx_GIVEREF(__pyx_tuple__4);
+  __pyx_codeobj__5 = (PyObject*)__Pyx_PyCode_New(2, 0, 4, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__4, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_media_ldata_code_workspaces_cyt, __pyx_n_s_convert, 31, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 31; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_RefNannyFinishContext();
   return 0;
+  __pyx_L1_error:;
+  __Pyx_RefNannyFinishContext();
+  return -1;
 }
 
 static int __Pyx_InitGlobals(void) {
@@ -1187,6 +1554,30 @@ PyMODINIT_FUNC PyInit_sym2eps(void)
   __pyx_t_1 = __Pyx_Import(__pyx_n_s_os, 0, -1); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 6; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_os, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 6; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "sym2eps.pyx":24
+ * 
+ * 
+ * def get_bytes(s):             # <<<<<<<<<<<<<<
+ *     if isinstance(s, unicode):
+ *         bytes = s.encode('UTF-8')
+ */
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_7sym2eps_3get_bytes, NULL, __pyx_n_s_sym2eps); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 24; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_get_bytes, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 24; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "sym2eps.pyx":31
+ * 
+ * 
+ * def convert(inpath, outpath):             # <<<<<<<<<<<<<<
+ *     _py_inpath = get_bytes(os.path.normpath(inpath))
+ *     _py_outpath = get_bytes(os.path.normpath(outpath))
+ */
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_7sym2eps_5convert, NULL, __pyx_n_s_sym2eps); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 31; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_1);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_convert, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 31; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "sym2eps.pyx":2
@@ -1462,72 +1853,6 @@ bad:
 }
 #endif
 
-static CYTHON_INLINE PyObject *__Pyx_GetModuleGlobalName(PyObject *name) {
-    PyObject *result;
-#if CYTHON_COMPILING_IN_CPYTHON
-    result = PyDict_GetItem(__pyx_d, name);
-    if (likely(result)) {
-        Py_INCREF(result);
-    } else {
-#else
-    result = PyObject_GetItem(__pyx_d, name);
-    if (!result) {
-        PyErr_Clear();
-#endif
-        result = __Pyx_GetBuiltinName(name);
-    }
-    return result;
-}
-
-#if CYTHON_COMPILING_IN_CPYTHON
-static CYTHON_INLINE PyObject* __Pyx_PyObject_CallMethO(PyObject *func, PyObject *arg) {
-    PyObject *self, *result;
-    PyCFunction cfunc;
-    cfunc = PyCFunction_GET_FUNCTION(func);
-    self = PyCFunction_GET_SELF(func);
-    if (unlikely(Py_EnterRecursiveCall((char*)" while calling a Python object")))
-        return NULL;
-    result = cfunc(self, arg);
-    Py_LeaveRecursiveCall();
-    if (unlikely(!result) && unlikely(!PyErr_Occurred())) {
-        PyErr_SetString(
-            PyExc_SystemError,
-            "NULL result without error in PyObject_Call");
-    }
-    return result;
-}
-#endif
-
-#if CYTHON_COMPILING_IN_CPYTHON
-static PyObject* __Pyx__PyObject_CallOneArg(PyObject *func, PyObject *arg) {
-    PyObject *result;
-    PyObject *args = PyTuple_New(1);
-    if (unlikely(!args)) return NULL;
-    Py_INCREF(arg);
-    PyTuple_SET_ITEM(args, 0, arg);
-    result = __Pyx_PyObject_Call(func, args, NULL);
-    Py_DECREF(args);
-    return result;
-}
-static CYTHON_INLINE PyObject* __Pyx_PyObject_CallOneArg(PyObject *func, PyObject *arg) {
-#ifdef __Pyx_CyFunction_USED
-    if (likely(PyCFunction_Check(func) || PyObject_TypeCheck(func, __pyx_CyFunctionType))) {
-#else
-    if (likely(PyCFunction_Check(func))) {
-#endif
-        if (likely(PyCFunction_GET_FLAGS(func) & METH_O)) {
-            return __Pyx_PyObject_CallMethO(func, arg);
-        }
-    }
-    return __Pyx__PyObject_CallOneArg(func, arg);
-}
-#else
-static CYTHON_INLINE PyObject* __Pyx_PyObject_CallOneArg(PyObject *func, PyObject *arg) {
-    PyObject* args = PyTuple_Pack(1, arg);
-    return (likely(args)) ? __Pyx_PyObject_Call(func, args, NULL) : NULL;
-}
-#endif
-
 static void __Pyx_RaiseArgtupleInvalid(
     const char* func_name,
     int exact,
@@ -1666,6 +1991,72 @@ invalid_keyword:
 bad:
     return -1;
 }
+
+static CYTHON_INLINE PyObject *__Pyx_GetModuleGlobalName(PyObject *name) {
+    PyObject *result;
+#if CYTHON_COMPILING_IN_CPYTHON
+    result = PyDict_GetItem(__pyx_d, name);
+    if (likely(result)) {
+        Py_INCREF(result);
+    } else {
+#else
+    result = PyObject_GetItem(__pyx_d, name);
+    if (!result) {
+        PyErr_Clear();
+#endif
+        result = __Pyx_GetBuiltinName(name);
+    }
+    return result;
+}
+
+#if CYTHON_COMPILING_IN_CPYTHON
+static CYTHON_INLINE PyObject* __Pyx_PyObject_CallMethO(PyObject *func, PyObject *arg) {
+    PyObject *self, *result;
+    PyCFunction cfunc;
+    cfunc = PyCFunction_GET_FUNCTION(func);
+    self = PyCFunction_GET_SELF(func);
+    if (unlikely(Py_EnterRecursiveCall((char*)" while calling a Python object")))
+        return NULL;
+    result = cfunc(self, arg);
+    Py_LeaveRecursiveCall();
+    if (unlikely(!result) && unlikely(!PyErr_Occurred())) {
+        PyErr_SetString(
+            PyExc_SystemError,
+            "NULL result without error in PyObject_Call");
+    }
+    return result;
+}
+#endif
+
+#if CYTHON_COMPILING_IN_CPYTHON
+static PyObject* __Pyx__PyObject_CallOneArg(PyObject *func, PyObject *arg) {
+    PyObject *result;
+    PyObject *args = PyTuple_New(1);
+    if (unlikely(!args)) return NULL;
+    Py_INCREF(arg);
+    PyTuple_SET_ITEM(args, 0, arg);
+    result = __Pyx_PyObject_Call(func, args, NULL);
+    Py_DECREF(args);
+    return result;
+}
+static CYTHON_INLINE PyObject* __Pyx_PyObject_CallOneArg(PyObject *func, PyObject *arg) {
+#ifdef __Pyx_CyFunction_USED
+    if (likely(PyCFunction_Check(func) || PyObject_TypeCheck(func, __pyx_CyFunctionType))) {
+#else
+    if (likely(PyCFunction_Check(func))) {
+#endif
+        if (likely(PyCFunction_GET_FLAGS(func) & METH_O)) {
+            return __Pyx_PyObject_CallMethO(func, arg);
+        }
+    }
+    return __Pyx__PyObject_CallOneArg(func, arg);
+}
+#else
+static CYTHON_INLINE PyObject* __Pyx_PyObject_CallOneArg(PyObject *func, PyObject *arg) {
+    PyObject* args = PyTuple_Pack(1, arg);
+    return (likely(args)) ? __Pyx_PyObject_Call(func, args, NULL) : NULL;
+}
+#endif
 
 static PyObject *__Pyx_Import(PyObject *name, PyObject *from_list, int level) {
     PyObject *empty_list = 0;

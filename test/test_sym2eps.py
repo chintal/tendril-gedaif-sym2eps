@@ -31,3 +31,4 @@ def test_sym2eps():
     import sym2eps
     sym2eps.convert('test/symbol.sym', 'test/output.eps')
     assert os.path.exists('test/output.eps') == True
+

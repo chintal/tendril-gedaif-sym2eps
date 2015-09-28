@@ -8,18 +8,28 @@ cimport _sym2eps
 ctypedef unsigned char char_type
 
 
-cdef _convert(char* inpath, char* outpath):
+cdef __convert(char* inpath, char* outpath):
     if _sym2eps.convert(inpath, outpath) != 0:
         raise RuntimeError(
             "Error converting {0} to {1}".format(inpath, outpath)
         )
 
 
-cpdef convert(_py_inpath, _py_outpath):
-    _py_inpath = os.path.normpath(_py_inpath)
-    _py_outpath = os.path.normpath(_py_outpath)
-    cdef char* _c_inpath = _py_inpath
-    cdef char* _c_outpath = _py_outpath
-    _convert(_c_inpath, _c_outpath)
+cpdef _convert(_py_bytes_inpath, _py_bytes_outpath):
+    cdef char* _c_inpath = _py_bytes_inpath
+    cdef char* _c_outpath = _py_bytes_outpath
+    __convert(_c_inpath, _c_outpath)
 
+
+def get_bytes(s):
+    if isinstance(s, unicode):
+        bytes = s.encode('UTF-8')
+        return bytes
+    return s
+
+
+def convert(inpath, outpath):
+    _py_inpath = get_bytes(os.path.normpath(inpath))
+    _py_outpath = get_bytes(os.path.normpath(outpath))
+    _convert(_py_inpath, _py_outpath)
 
