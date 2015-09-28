@@ -2,6 +2,12 @@
 gEDA sym2eps Python Wrapper
 ---------------------------
 
+.. image:: https://badge.fury.io/py/tendril-gedaif-sym2eps.png
+    :target: http://badge.fury.io/py/tendril-gedaif-sym2eps
+
+.. image:: https://travis-ci.org/chintal/tendril-gedaif-sym2eps.svg
+    :target: https://travis-ci.org/chintal/tendril-gedaif-sym2eps
+
 Provides a _very_ simple wrapper around DJ Delorie's ``sym2eps``.
 
 This package (and the wrapper) are mostly for fun and for having a simple
@@ -18,6 +24,21 @@ within the ``tendril`` core module. This way, we just list this package
 as a dependency and let setuptools / distutils take care of it.
 
 Cython tutorial (for future reference): http://docs.cython.org/src/tutorial/
+
+Installation
+------------
+::
+
+    pip install tendril-gedaif-sym2eps
+
+Usage Example
+-------------
+
+    >>> import sym2eps
+    >>> sym2eps.convert('test/symbol.sym', 'test/output.eps')
+
+.. hint:: The paths specified here should either be absolute or relative
+          to the CWD.
 
 License
 -------

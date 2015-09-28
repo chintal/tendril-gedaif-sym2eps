@@ -1,0 +1,12 @@
+include README.rst
+include LICENSE
+
+include setup.py
+include src/_sym2eps.c
+include src/_sym2eps.h
+include _sym2eps.pxd
+include sym2eps.c
+include sym2eps.pyx
+
+include tox
+include test/symbol.sym
