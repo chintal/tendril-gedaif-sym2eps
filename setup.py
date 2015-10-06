@@ -38,7 +38,7 @@ if USE_CYTHON:
 
 setup(
     name="tendril-gedaif-sym2eps",
-    version="0.2",
+    version="0.2.1",
     author="Chintalagiri Shashank",
     author_email="shashank@chintal.in",
     description="gEDA sym2eps Python Wrapper",

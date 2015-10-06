@@ -158,6 +158,8 @@ ps_length(char *t, int size)
   return (int)l;
 }
 
+// TODO Something in scan_extents causes a segmentation fault when called twice.
+
 void
 scan_extents (void)
 {
@@ -608,8 +610,13 @@ write_eps (const char *filename, FILE *f)
  * Refactored main out into the convert function, eliminating some
  * functionality in the process, but providing a function with a
  * straightforward prototype for wrapping.
+ * 
+ * This doesn't actually work. Calling the function twice results in
+ * a segmentation fault, most likely somewhere in scan_extents.
+ * 
  */
 int convert(char * inpath, char * outpath) {
+
 	FILE *symfile;
 	FILE *epsfile;
 
@@ -626,7 +633,7 @@ int convert(char * inpath, char * outpath) {
 	fclose (symfile);
 	scan_extents();
 
-    epsfile = fopen (outpath, "w");
+        epsfile = fopen (outpath, "w");
   	if (!epsfile)
 	{
 		fprintf(stderr, "Error: can't open %s for writing.\n", outpath);

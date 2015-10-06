@@ -40,6 +40,10 @@ Usage Example
 .. hint:: The paths specified here should either be absolute or relative
           to the CWD.
 
+.. warning:: This module is currently broken. It will segfault if you try
+             to convert multiple files. If you think you can fix it, see
+             the ``convert()`` function of ``src/_sym2eps.cc``.
+
 License
 -------
 Distributed under the terms of the GPLv2 License.
